@@ -1,6 +1,6 @@
 # Homebrew Tap for Claude Usage Tracker
 
-This is a custom Homebrew tap for [Claude Usage Tracker](https://github.com/SergioBanuls/ClaudeUsageTracker).
+This is a custom Homebrew tap for [Claude Usage Tracker](https://github.com/masmovil/ClaudeUsageTracker).
 
 ## Installation
 
@@ -8,7 +8,7 @@ This is a custom Homebrew tap for [Claude Usage Tracker](https://github.com/Serg
 
 ```bash
 # Add the tap
-brew tap SergioBanuls/claudeusagetracker
+brew tap masmovil/claudeusagetracker
 
 # Install the app
 brew install --cask claudeusagetracker
@@ -17,7 +17,7 @@ brew install --cask claudeusagetracker
 ### One-liner installation
 
 ```bash
-brew install --cask SergioBanuls/claudeusagetracker/claudeusagetracker
+brew install --cask masmovil/claudeusagetracker/claudeusagetracker
 ```
 
 ## Update
@@ -50,8 +50,10 @@ Track your Claude Code API usage directly from your macOS menu bar with accurate
 - 🌍 Multi-language (English/Spanish)
 - 🔒 Privacy-first (all data stays local)
 
-For more information, visit the [main repository](https://github.com/SergioBanuls/ClaudeUsageTracker).
+For more information, visit the [main repository](https://github.com/masmovil/ClaudeUsageTracker).
 
 ## License
 
-MIT License - See [LICENSE](https://github.com/SergioBanuls/ClaudeUsageTracker/blob/main/LICENSE)
+Personal Use License (Non-Commercial) - See [LICENSE](https://github.com/masmovil/ClaudeUsageTracker/blob/main/LICENSE)
+
+Copyright (c) 2025 Sergio Bañuls. This software is licensed for personal, non-commercial use only. Commercial use requires prior written permission from the copyright holder.
