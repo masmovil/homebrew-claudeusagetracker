@@ -14,6 +14,12 @@ cask "claudeusagetracker" do
 
   app "ClaudeUsageTracker.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/ClaudeUsageTracker.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Preferences/com.claudeusage.tracker.plist",
   ]
