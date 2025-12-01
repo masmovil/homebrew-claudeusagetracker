@@ -14,33 +14,29 @@ cask "claudeusagetracker" do
 
   app "ClaudeUsageTracker.app"
 
-  postflight do
-    # Remove quarantine attributes
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/ClaudeUsageTracker.app"],
-                   sudo: false
+  # Close app before upgrade (prevents conflicts)
+  uninstall_preflight do
+    system_command "/usr/bin/killall",
+                   args: ["ClaudeUsageTracker"],
+                   sudo: false,
+                   print_stderr: false
+  end
 
-    # Check if app is running and close it gracefully
-    system_command "/usr/bin/pgrep",
-                   args: ["-x", "ClaudeUsageTracker"],
+  postflight do
+    # Remove quarantine attributes (ignore errors if already removed)
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/ClaudeUsageTracker.app"],
                    sudo: false,
                    print_stderr: false
 
-    # If running (exit code 0), kill it
-    if $?.exitstatus == 0
-      system_command "/usr/bin/killall",
-                     args: ["ClaudeUsageTracker"],
-                     sudo: false,
-                     print_stderr: false
-
-      # Wait for app to close
-      sleep 1
-    end
+    # Small delay to ensure app directory is ready
+    sleep 0.5
 
     # Open the new version
     system_command "/usr/bin/open",
                    args: ["-a", "Claude Usage Tracker"],
-                   sudo: false
+                   sudo: false,
+                   print_stderr: false
   end
 
   caveats do
