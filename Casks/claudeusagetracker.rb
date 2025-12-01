@@ -29,14 +29,17 @@ cask "claudeusagetracker" do
                    sudo: false,
                    print_stderr: false
 
-    # Small delay to ensure app directory is ready
-    sleep 0.5
+    # Wait for app to be fully installed and ready
+    sleep 1
 
-    # Open the new version
-    system_command "/usr/bin/open",
-                   args: ["-a", "Claude Usage Tracker"],
-                   sudo: false,
-                   print_stderr: false
+    # Open using full path (more reliable than app name)
+    app_path = "#{appdir}/ClaudeUsageTracker.app"
+    if File.exist?(app_path)
+      system_command "/usr/bin/open",
+                     args: [app_path],
+                     sudo: false,
+                     print_stderr: false
+    end
   end
 
   caveats do
