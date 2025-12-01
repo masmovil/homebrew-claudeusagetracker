@@ -1,6 +1,6 @@
 cask "claudeusagetracker" do
-  version "1.6.0"
-  sha256 "a522306bc40cd66ed62ab8ff98e351086ba0315752658958010b8f7bcfcca86f"
+  version "1.7.0"
+  sha256 "f7434375bd55e8df522a8f327526268e12c1e9159ab785c4e02e637d13b60eb6"
 
   url "https://github.com/masorange/ClaudeUsageTracker/releases/download/v#{version}/ClaudeUsageTracker-v#{version}.dmg"
   name "Claude Usage Tracker"
