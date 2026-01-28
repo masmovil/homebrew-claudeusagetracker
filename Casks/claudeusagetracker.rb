@@ -1,6 +1,6 @@
 cask "claudeusagetracker" do
-  version "1.8.0"
-  sha256 "7bb6bce80730280f8250c16df857778bbc9fc415885784981411be371e2f4ed1"
+  version "1.9.0"
+  sha256 "d06d79b8c41650841829cba64c2b867bd478e8c5eddc95df4e12ffd616a97abb"
 
   url "https://github.com/masorange/ClaudeUsageTracker/releases/download/v#{version}/ClaudeUsageTracker-v#{version}.dmg"
   name "Claude Usage Tracker"
@@ -46,8 +46,8 @@ cask "claudeusagetracker" do
     <<~EOS
       Claude Usage Tracker has been updated to v#{version}!
 
-      ⚠️  Important: API data access has been disabled. The app now uses
-      local data for cost estimates.
+      🆕 New in v1.9.0: Account filter to track only work (Vertex) or
+      personal usage separately. Configure in Settings.
 
       The app should open automatically. If it doesn't, launch it manually:
         open -a "Claude Usage Tracker"
